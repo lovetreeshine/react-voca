@@ -3,6 +3,8 @@ import DayList from "./component/DayList";
 import Header from "./component/Header";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import EmptyPage from "./component/EmptyPage";
+import CreateWord from "./component/CreateWord";
+import CreateDay from "./component/CreateDay";
 
 function App() {
   return (
@@ -10,14 +12,19 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/"> {/*  exact를 적어줘야 정확한 path 입력받음 */}
-
+          <Route exact path="/"> 
             <DayList/>
           </Route>
-          <Route path="/day/:day"> {/* :뒤의 변수로 값 전달  */}
+          <Route path="/day/:day"> 
             <Day />
           </Route>
-          <Route>  {/* path가 없는 라우터는 맨 마지막에 적기  */}
+          <Route path="/create_word"> 
+            <CreateWord />
+          </Route>
+          <Route path="/create_day"> 
+            <CreateDay />
+          </Route>
+          <Route>  
             <EmptyPage/>
           </Route>
 
